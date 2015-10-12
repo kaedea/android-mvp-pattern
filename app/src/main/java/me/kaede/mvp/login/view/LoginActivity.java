@@ -13,20 +13,18 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 import me.kaede.mvp.R;
 import me.kaede.mvp.home.view.HomeActivity;
-import me.kaede.mvp.login.presenter.LoginPresenter;
-import me.kaede.mvp.login.presenter.ProgressBarPresenter;
+import me.kaede.mvp.login.presenter.ILoginPresenter;
+import me.kaede.mvp.login.presenter.LoginPresenterCompl;
 
 
-public class LoginActivity extends ActionBarActivity implements ILoginView, IProgressBarView, View.OnClickListener {
+public class LoginActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
 
 	private EditText editUser;
 	private EditText editPass;
 	private Button   btnLogin;
 	private Button   btnClear;
-	LoginPresenter loginPresenter;
+	ILoginPresenter loginPresenter;
 	private ProgressBar progressBar;
-	private ProgressBarPresenter progressBarPresenter;
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +43,8 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, IPro
 		btnClear.setOnClickListener(this);
 
 		//init
-		loginPresenter = new LoginPresenter(this);
-		progressBarPresenter = new ProgressBarPresenter(this);
-		progressBarPresenter.setProgressBarVisiblity(View.INVISIBLE);
+		loginPresenter = new LoginPresenterCompl(this);
+		loginPresenter.setProgressBarVisiblity(View.INVISIBLE);
 	}
 
 	@Override
@@ -57,7 +54,7 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, IPro
 				loginPresenter.clear();
 				break;
 			case R.id.btn_login_login:
-				progressBarPresenter.setProgressBarVisiblity(View.VISIBLE);
+				loginPresenter.setProgressBarVisiblity(View.VISIBLE);
 				btnLogin.setEnabled(false);
 				btnClear.setEnabled(false);
 				loginPresenter.doLogin(editUser.getText().toString(), editPass.getText().toString());
@@ -66,14 +63,14 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, IPro
 	}
 
 	@Override
-	public void clearText() {
+	public void onClearText() {
 		editUser.setText("");
 		editPass.setText("");
 	}
 
 	@Override
-	public void OnLoginResult(Boolean result) {
-		progressBarPresenter.setProgressBarVisiblity(View.INVISIBLE);
+	public void onLoginResult(Boolean result, int code) {
+		loginPresenter.setProgressBarVisiblity(View.INVISIBLE);
 		btnLogin.setEnabled(true);
 		btnClear.setEnabled(true);
 		if (result){
@@ -81,12 +78,12 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, IPro
 			startActivity(new Intent(this, HomeActivity.class));
 		}
 		else
-			Toast.makeText(this,"Login Fail",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,"Login Fail, code = " + code,Toast.LENGTH_SHORT).show();
 	}
 
 
 	@Override
-	public void setProgressBarVisibility(int visibility) {
+	public void onSetProgressBarVisibility(int visibility) {
 		progressBar.setVisibility(visibility);
 	}
 
