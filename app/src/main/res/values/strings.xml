@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android MVP Pattern</string>
+    <string name="app_name">Clear MVP</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -37,4 +37,5 @@
         <item>Mauritania</item>
         <item>Egypt</item>
     </string-array>
+    <string name="title_activity_adapter">AdapterActivityA</string>
 </resources>

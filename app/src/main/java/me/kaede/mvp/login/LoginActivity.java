@@ -1,4 +1,4 @@
-package me.kaede.mvp.login.view;
+package me.kaede.mvp.login;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,9 +12,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import me.kaede.mvp.R;
-import me.kaede.mvp.home.view.HomeActivity;
+import me.kaede.mvp.home.HomeActivity;
 import me.kaede.mvp.login.presenter.ILoginPresenter;
 import me.kaede.mvp.login.presenter.LoginPresenterCompl;
+import me.kaede.mvp.login.view.ILoginView;
 
 
 public class LoginActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
@@ -75,7 +76,6 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 		btnClear.setEnabled(true);
 		if (result){
 			Toast.makeText(this,"Login Success",Toast.LENGTH_SHORT).show();
-			startActivity(new Intent(this, HomeActivity.class));
 		}
 		else
 			Toast.makeText(this,"Login Fail, code = " + code,Toast.LENGTH_SHORT).show();
@@ -86,26 +86,5 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 	public void onSetProgressBarVisibility(int visibility) {
 		progressBar.setVisibility(visibility);
 	}
-
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-
-		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_github) {
-			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setData(Uri.parse("https://github.com/kaedea/"));
-			startActivity(intent);
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
+	
 }

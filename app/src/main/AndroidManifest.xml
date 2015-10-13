@@ -6,9 +6,14 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
         <activity
-            android:name=".login.view.LoginActivity"
+            android:name=".login.LoginActivity"
+            android:label="@string/app_name" >
+
+        </activity>
+        <activity
+            android:name=".home.HomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,8 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".home.view.HomeActivity"
-            android:label="@string/title_activity_home" >
+            android:name=".outteradapter.AdapterActivityA"
+            android:label="AdapterActivity A" >
+        </activity>
+        <activity
+            android:name=".outteradapter.AdapterActivityB"
+            android:label="AdapterActivity B" >
         </activity>
     </application>
 

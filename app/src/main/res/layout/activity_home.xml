@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/layout_home"
-                tools:context="me.kaede.mvp.home.view.HomeActivity">
+                tools:context="me.kaede.mvp.home.HomeActivity">
 
     <ListView android:id="@+id/list_home" android:layout_width="match_parent" android:layout_height="match_parent"></ListView>
 </RelativeLayout>
