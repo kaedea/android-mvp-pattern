@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.kaede.androidmvppattern"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+        <activity
+            android:name="me.kaede.mvp.home.HomeActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="me.kaede.mvp.eventbus.EventBusActivity"
+            android:label="EventBus MVP" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="me.kaede.mvp.login.LoginActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="me.kaede.mvp.outteradapter.AdapterActivityA"
+            android:label="AdapterActivity A" >
+        </activity>
+        <activity
+            android:name="me.kaede.mvp.outteradapter.AdapterActivityB"
+            android:label="AdapterActivity B" >
+        </activity>
+    </application>
+
+</manifest>

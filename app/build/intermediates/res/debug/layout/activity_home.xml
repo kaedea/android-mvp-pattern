@@ -1,0 +1,10 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layout_home"
+                tools:context="me.kaede.mvp.home.HomeActivity">
+
+    <ListView android:id="@+id/list_home" android:layout_width="match_parent" android:layout_height="match_parent"></ListView>
+</RelativeLayout>
+<!-- From: file:/F:/Kaede/Git/Android-MVP-Pattern/app/src/main/res/layout/activity_home.xml -->

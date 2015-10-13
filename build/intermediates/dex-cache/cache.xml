@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\classes-be8cca31e86af3b0b4cedfe13528e5db97360b18.jar" />
+    </item>
+    <item
+        jar="C:\ADT\android-sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-60bd5b63dcef30a64379ec8ce94e51f257a3a61c.jar" />
+    </item>
+    <item
+        jar="D:\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0-7d55eaa6c2d6e133dc6c834237ce93e1c4df8e4d.jar" />
+    </item>
+    <item
+        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\classes-831c0bb9ac38209dc9e6f69dfad42fc82069deb7.jar" />
+    </item>
+    <item
+        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-b6954d29799f5489995605350979db96e268fab7.jar" />
+    </item>
+
+</items>

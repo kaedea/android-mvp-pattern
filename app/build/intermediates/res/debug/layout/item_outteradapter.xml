@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:background="#ddd"
+                android:layout_height="60dp">
+    <TextView android:id="@+id/tv_outter_adapter_text" android:singleLine="true" android:ellipsize="marquee"
+              android:padding="10dp" android:layout_width="wrap_content" android:layout_height="match_parent"
+              android:gravity="center_vertical" android:text="TEXT"/>
+    <TextView android:id="@+id/tv_outter_adapter_add" android:layout_toLeftOf="@+id/tv_outter_adapter_delete"
+              android:textColor="#fff" android:background="@android:color/holo_blue_light" android:layout_width="60dp"
+              android:layout_height="match_parent" android:gravity="center" android:text="Add"/>
+    <TextView android:id="@+id/tv_outter_adapter_delete" android:textColor="#fff"
+              android:background="@android:color/holo_red_light" android:layout_width="60dp"
+              android:layout_height="match_parent" android:layout_alignParentRight="true" android:gravity="center"
+              android:text="Delete"/>
+    <View android:layout_width="match_parent" android:layout_height="1px" android:layout_alignParentBottom="true" android:background="#fff"/>
+
+</RelativeLayout><!-- From: file:/F:/Kaede/Git/Android-MVP-Pattern/app/src/main/res/layout/item_outteradapter.xml -->
