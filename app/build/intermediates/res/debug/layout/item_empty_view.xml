@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:gravity="center"
-              android:layout_height="match_parent">
-    <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
-
-</LinearLayout><!-- From: file:/F:/Kaede/Git/Android-MVP-Pattern/app/src/main/res/layout/item_empty_view.xml -->

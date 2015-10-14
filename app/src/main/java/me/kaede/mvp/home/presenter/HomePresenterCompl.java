@@ -1,21 +1,34 @@
 package me.kaede.mvp.home.presenter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import me.kaede.mvp.R;
+import me.kaede.mvp.eventbus.EventBusActivity;
+import me.kaede.mvp.home.util.ActivityHolder;
 import me.kaede.mvp.home.view.IHomeView;
+import me.kaede.mvp.login.LoginActivity;
+import me.kaede.mvp.outteradapter.AdapterActivityA;
+import me.kaede.mvp.outteradapter.AdapterActivityB;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by kaede on 2015/5/19.
  */
 public class HomePresenterCompl implements IHomePresenter {
-	List<String> datas;
-	Context      context;
-	IHomeView homeView;
+	public static ActivityHolder activityHolder;
+	static {
+		activityHolder = new ActivityHolder();
+		activityHolder.addActivity("Simple MVP",LoginActivity.class);
+		activityHolder.addActivity("MVP in Adapter A", AdapterActivityA.class);
+		activityHolder.addActivity("MVP in Adapter B", AdapterActivityB.class);
+		activityHolder.addActivity("MVP with EventBus	", EventBusActivity.class);
+}
+Context context;
+IHomeView homeView;
 
 	public HomePresenterCompl(Context context, IHomeView homeView) {
 		this.context = context;
@@ -24,23 +37,21 @@ public class HomePresenterCompl implements IHomePresenter {
 
 	@Override
 	public void loadDatas() {
-		String[] countries = context.getResources().getStringArray(R.array.countries);
-		datas = new ArrayList<>();
-		for (String item:countries){
-			datas.add(item);
-		}
 
 		Handler handler = new Handler(Looper.getMainLooper());
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				homeView.onGetDataList(datas);
+				homeView.onGetDataList(activityHolder.getNameList());
 			}
 		},2000);
 	}
 
 	@Override
 	public void onItemClick(int position) {
-		homeView.toast(datas.get(position));
+		Class activity = activityHolder.getActivity(activityHolder.getNameList().get(position));
+		if (activity!=null){
+			context.startActivity(new Intent(context, activity));
+		}
 	}
 }
