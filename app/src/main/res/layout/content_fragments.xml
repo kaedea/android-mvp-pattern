@@ -8,8 +8,8 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/activity_fragments"
         tools:context="me.kaede.mvp.fragment.FragmentsActivity">
-    <android.support.design.widget.TabLayout android:layout_width="match_parent" android:id="@+id/tablayout_fragments" android:background="#fff"
-                                             android:layout_height="40dp"></android.support.design.widget.TabLayout>
+    <android.support.design.widget.TabLayout android:layout_width="match_parent" android:id="@+id/tablayout_fragments" android:background="#DDD"
+                                             android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
     <android.support.v4.view.ViewPager android:layout_width="match_parent"
                                        android:layout_height="match_parent"
                                        android:layout_below="@+id/tablayout_fragments"

@@ -9,6 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import me.kaede.mvp.R;
+import me.kaede.mvp.fragment.presenter.ActivityPresenterCompl;
+import me.kaede.mvp.fragment.presenter.IActivityPresenter;
 
 public class FragmentsActivity extends AppCompatActivity {
 
@@ -24,6 +26,9 @@ public class FragmentsActivity extends AppCompatActivity {
 		viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
 		viewPager.setOffscreenPageLimit(3);
 		tabLayout.setupWithViewPager(viewPager);
+
+		IActivityPresenter iActivityPresenter = new ActivityPresenterCompl(this);
+		iActivityPresenter.loadDatas();
 	}
 
 	public class MyAdapter extends FragmentStatePagerAdapter {
@@ -34,7 +39,7 @@ public class FragmentsActivity extends AppCompatActivity {
 
 		@Override
 		public Fragment getItem(int position) {
-			return DemoFragment.newInstance(pagers[position]);
+			return DemoFragment.newInstance(position);
 		}
 
 		@Override

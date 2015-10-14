@@ -1,12 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
+             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/layout_home"
              tools:context="me.kaede.mvp.fragment.DemoFragment">
-
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
-
+    <ListView android:id="@+id/list_home" android:layout_width="match_parent" android:layout_height="match_parent"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior"></ListView>
 </FrameLayout>
