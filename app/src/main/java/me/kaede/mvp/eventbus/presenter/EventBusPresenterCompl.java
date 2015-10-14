@@ -1,13 +1,12 @@
 package me.kaede.mvp.eventbus.presenter;
 
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import de.greenrobot.event.EventBus;
 import me.kaede.mvp.R;
 import me.kaede.mvp.eventbus.event.GetDatasEvent;
 import me.kaede.mvp.eventbus.event.ToastEvent;
-import me.kaede.mvp.eventbus.view.IHomeView;
+import me.kaede.mvp.eventbus.view.IEventBusView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,18 +16,16 @@ import java.util.List;
  */
 public class EventBusPresenterCompl implements IEventBusPresenter {
 	List<String> datas;
-	Context context;
-	IHomeView homeView;
+	IEventBusView iEventBusView;
 
-	public EventBusPresenterCompl(Context context, IHomeView homeView) {
-		this.context = context;
-		this.homeView = homeView;
+	public EventBusPresenterCompl(IEventBusView iEventBusView) {
+		this.iEventBusView = iEventBusView;
 	}
 
 	@Override
 	public void loadDatas() {
 
-		String[] countries = context.getResources().getStringArray(R.array.countries);
+		String[] countries = iEventBusView.getActivity().getResources().getStringArray(R.array.countries);
 		datas = new ArrayList<>();
 		for (String item:countries){
 			datas.add(item);

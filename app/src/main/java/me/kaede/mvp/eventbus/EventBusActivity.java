@@ -1,5 +1,6 @@
 package me.kaede.mvp.eventbus;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.*;
@@ -10,15 +11,14 @@ import me.kaede.mvp.eventbus.event.GetDatasEvent;
 import me.kaede.mvp.eventbus.event.ToastEvent;
 import me.kaede.mvp.eventbus.presenter.EventBusPresenterCompl;
 import me.kaede.mvp.eventbus.presenter.IEventBusPresenter;
-import me.kaede.mvp.eventbus.view.IHomeView;
+import me.kaede.mvp.eventbus.view.IEventBusView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventBusActivity extends ActionBarActivity implements AdapterView.OnItemClickListener,IHomeView {
+public class EventBusActivity extends ActionBarActivity implements AdapterView.OnItemClickListener,IEventBusView {
 
-	private ListView listView;
-	private IEventBusPresenter homePresenter;
+	private IEventBusPresenter iEventBusPresenter;
 	List<String> datas = new ArrayList<>();
 	private BaseAdapter adapter;
 
@@ -30,7 +30,7 @@ public class EventBusActivity extends ActionBarActivity implements AdapterView.O
 		EventBus.getDefault().register(this);
 
 		//find view
-		listView = (ListView) this.findViewById(R.id.list_home);
+		ListView listView = (ListView) this.findViewById(R.id.list_home);
 
 		//set listener
 		listView.setOnItemClickListener(this);
@@ -44,40 +44,39 @@ public class EventBusActivity extends ActionBarActivity implements AdapterView.O
 		listView.setEmptyView(loadingView);
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datas);
 		listView.setAdapter(adapter);
-		homePresenter = new EventBusPresenterCompl(this,this);
+		iEventBusPresenter = new EventBusPresenterCompl(this);
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		homePresenter.loadDatas();
+		iEventBusPresenter.loadDatas();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		EventBus.getDefault().unregister(this);
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		homePresenter.onItemClick(position);
+		iEventBusPresenter.onItemClick(position);
 	}
 
 	@Override
-	public void onGetDataList(List<String> datas) {
-		if (datas!=null&&datas.size()>0){
-			this.datas.clear();
-			this.datas.addAll(datas);
-			adapter.notifyDataSetChanged();
-		}
+	public Activity getActivity() {
+		return this;
 	}
 
-	@Override
-	public void toast(String msg) {
-		Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
-	}
-
+	// EventBus Subscribe
 	public void onEvent(ToastEvent toastEvent){
 		if (toastEvent!=null&&toastEvent.getMessage()!=null){
 			Toast.makeText(this,toastEvent.getMessage(),Toast.LENGTH_SHORT).show();
 		}
 	}
 
+	// EventBus Subscribe
 	public void onEvent(GetDatasEvent getDatasEvent){
 		if (getDatasEvent!=null && getDatasEvent.getDatas()!=null && getDatasEvent.getDatas().size()>0){
 			this.datas.clear();
