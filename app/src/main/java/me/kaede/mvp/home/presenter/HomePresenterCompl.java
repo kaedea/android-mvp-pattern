@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import me.kaede.mvp.R;
 import me.kaede.mvp.eventbus.EventBusActivity;
+import me.kaede.mvp.fragment.FragmentsActivity;
 import me.kaede.mvp.home.util.ActivityHolder;
 import me.kaede.mvp.home.view.IHomeView;
 import me.kaede.mvp.login.LoginActivity;
@@ -25,7 +26,8 @@ public class HomePresenterCompl implements IHomePresenter {
 		activityHolder.addActivity("Simple MVP",LoginActivity.class);
 		activityHolder.addActivity("MVP in Adapter A", AdapterActivityA.class);
 		activityHolder.addActivity("MVP in Adapter B", AdapterActivityB.class);
-		activityHolder.addActivity("MVP with EventBus	", EventBusActivity.class);
+		activityHolder.addActivity("MVP with EventBus", EventBusActivity.class);
+		activityHolder.addActivity("MVP with EventBus in Fragments", FragmentsActivity.class);
 }
 Context context;
 IHomeView homeView;

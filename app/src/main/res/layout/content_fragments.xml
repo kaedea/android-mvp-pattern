@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/activity_fragments"
+        tools:context="me.kaede.mvp.fragment.FragmentsActivity">
+    <android.support.design.widget.TabLayout android:layout_width="match_parent" android:id="@+id/tablayout_fragments" android:background="#fff"
+                                             android:layout_height="40dp"></android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager android:layout_width="match_parent"
+                                       android:layout_height="match_parent"
+                                       android:layout_below="@+id/tablayout_fragments"
+            android:id="@+id/viewpager_fragments">
+
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

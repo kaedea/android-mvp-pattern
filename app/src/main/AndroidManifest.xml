@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.kaede.mvp" >
+          package="me.kaede.mvp">
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
-            android:name=".home.HomeActivity"
-            android:label="@string/app_name" >
+                android:name=".home.HomeActivity"
+                android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name=".eventbus.EventBusActivity"
-            android:label="EventBus MVP" >
+                android:name=".eventbus.EventBusActivity"
+                android:label="MVP with EventBus">
         </activity>
         <activity
                 android:name=".login.LoginActivity"
-                android:label="@string/app_name" >
+                android:label="Simple MVP">
         </activity>
         <activity
-            android:name=".outteradapter.AdapterActivityA"
-            android:label="AdapterActivity A" >
+                android:name=".outteradapter.AdapterActivityA"
+                android:label="MVP in Adapter A">
         </activity>
         <activity
-            android:name=".outteradapter.AdapterActivityB"
-            android:label="AdapterActivity B" >
+                android:name=".outteradapter.AdapterActivityB"
+                android:label="MVP in Adapter B">
+        </activity>
+        <activity
+                android:name=".fragment.FragmentsActivity"
+                android:label="MVP in Fragments"
+                android:theme="@style/NoActionBar">
         </activity>
     </application>
 
