@@ -2,11 +2,18 @@
 <items version="2" >
 
     <item
-        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\libs\internal_impl-22.2.1.jar"
+        jar="C:\ADT\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-3c33af6a2febb61eccd73623a9932a8132da2f86.jar" />
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-218b10e1b6a796da5598ff93eaf5ad2f8f35792c.jar" />
+    </item>
+    <item
+        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.0.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="40e7757d9b06db670062ddb3cf5b30c129b2fd8c">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\classes-767629670f22ec90db5cb6fd3ff2142d2ced53f5.jar" />
     </item>
     <item
         jar="D:\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
@@ -16,11 +23,11 @@
         <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0-7d55eaa6c2d6e133dc6c834237ce93e1c4df8e4d.jar" />
     </item>
     <item
-        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\classes.jar"
+        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\libs\internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\classes-3eaf1c76e4f8d45e8da72073c97374b3c1870a87.jar" />
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-fcdfb079152b2acebadeaaaaa985fbd99c6764ce.jar" />
     </item>
     <item
         jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\classes.jar"
@@ -37,11 +44,11 @@
         <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\classes-1ae264bd9075edd95cdb8d29af14a9fb15d8b10c.jar" />
     </item>
     <item
-        jar="C:\ADT\android-sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jar="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-7dbd4e069f90482e078dcc341a4d1d7e275cc75c.jar" />
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="F:\Kaede\Git\Android-MVP-Pattern\app\build\intermediates\pre-dexed\debug\classes-b927bb776bfb15aa44fc2778071f6e05ee7a39e1.jar" />
     </item>
 
 </items>

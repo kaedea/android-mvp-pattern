@@ -20,8 +20,17 @@
                 android:background="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/PopupOverlay"/>
+        <android.support.design.widget.TabLayout android:layout_width="match_parent"
+                                                 android:id="@+id/tablayout_fragments"
+                                                 android:layout_height="wrap_content">
+        </android.support.design.widget.TabLayout>
 
     </android.support.design.widget.AppBarLayout>
+    <android.support.v4.view.ViewPager android:layout_width="match_parent"
+                                       android:layout_height="match_parent"
+                                       android:layout_below="@+id/tablayout_fragments"
+                                       app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                       android:id="@+id/viewpager_fragments">
 
-    <include layout="@layout/content_fragments"/>
+    </android.support.v4.view.ViewPager>
 </android.support.design.widget.CoordinatorLayout>

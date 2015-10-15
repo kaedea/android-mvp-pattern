@@ -37,7 +37,7 @@ public class ActivityPresenterCompl implements IActivityPresenter {
 				FragmentGetDatasEvent getDatasEvent = new FragmentGetDatasEvent(datas);
 				EventBus.getDefault().post(getDatasEvent);
 			}
-		}, 2000);
+		}, 1000);
 	}
 
 }

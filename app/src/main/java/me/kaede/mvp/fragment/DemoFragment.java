@@ -2,12 +2,15 @@ package me.kaede.mvp.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import de.greenrobot.event.EventBus;
 import me.kaede.mvp.R;
+import me.kaede.mvp.fragment.adapter.MyAdapter;
 import me.kaede.mvp.fragment.event.FragmentGetDatasEvent;
 import me.kaede.mvp.fragment.event.FragmentToastEvent;
 import me.kaede.mvp.fragment.presenter.FragmentPresenterCompl;
@@ -18,14 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DemoFragment extends Fragment implements IFragmentView,AdapterView.OnItemClickListener {
+public class DemoFragment extends Fragment implements IFragmentView{
 	private static final String BUNDLE_INDEX = "BUNDLE_INDEX";
 
 	private int index;
 
+	private MyAdapter adapter;
 	private IFragmentPresenter iFragmentPresenter;
-	List<String> datas = new ArrayList<>();
-	private BaseAdapter adapter;
 
 
 	public static DemoFragment newInstance(int index) {
@@ -54,21 +56,13 @@ public class DemoFragment extends Fragment implements IFragmentView,AdapterView.
 		EventBus.getDefault().register(this);
 
 		//find view
-		ListView listView = (ListView) view.findViewById(R.id.list_home);
-
-		//set listener
-		listView.setOnItemClickListener(this);
+		RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.list_home);
 
 		//init
-		View loadingView = LayoutInflater.from(getActivity()).inflate(R.layout.item_empty_view, null);
-		ViewGroup viewGroup = (ViewGroup) view.findViewById(R.id.layout_home);
-		RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
-		layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
-		viewGroup.addView(loadingView, layoutParams);
-		listView.setEmptyView(loadingView);
-		adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, datas);
-		listView.setAdapter(adapter);
+		recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 		iFragmentPresenter = new FragmentPresenterCompl(this);
+		adapter = new MyAdapter(iFragmentPresenter);
+		recyclerView.setAdapter(adapter);
 
 		return view;
 	}
@@ -79,10 +73,6 @@ public class DemoFragment extends Fragment implements IFragmentView,AdapterView.
 		EventBus.getDefault().unregister(this);
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		iFragmentPresenter.onItemClick(position);
-	}
 
 	@Override
 	public void onItemClick(int position) {
@@ -92,9 +82,10 @@ public class DemoFragment extends Fragment implements IFragmentView,AdapterView.
 	// EventBus Subscribe
 	public void onEvent(FragmentGetDatasEvent getDatasEvent){
 		if (getDatasEvent!=null && getDatasEvent.getDatas()!=null && getDatasEvent.getDatas().size()>0){
-			this.datas.clear();
-			this.datas.addAll(getDatasEvent.getDatas());
-			adapter.notifyDataSetChanged();
+			adapter.setDatas(getDatasEvent.getDatas());
 		}
 	}
+
+
+
 }

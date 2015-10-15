@@ -4,6 +4,11 @@
              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
              android:id="@+id/layout_home"
              tools:context="me.kaede.mvp.fragment.DemoFragment">
-    <ListView android:id="@+id/list_home" android:layout_width="match_parent" android:layout_height="match_parent"
-              app:layout_behavior="@string/appbar_scrolling_view_behavior"></ListView>
+
+    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:id="@+id/list_home"
+                                            >
+
+    </android.support.v7.widget.RecyclerView>
 </FrameLayout>

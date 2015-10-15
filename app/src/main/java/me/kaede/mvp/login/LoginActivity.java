@@ -1,18 +1,13 @@
 package me.kaede.mvp.login;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import me.kaede.mvp.R;
-import me.kaede.mvp.home.HomeActivity;
 import me.kaede.mvp.login.presenter.ILoginPresenter;
 import me.kaede.mvp.login.presenter.LoginPresenterCompl;
 import me.kaede.mvp.login.view.ILoginView;
@@ -30,7 +25,7 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_login);
 
 		//find view
 		editUser = (EditText) this.findViewById(R.id.et_login_username);
