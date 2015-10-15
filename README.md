@@ -5,10 +5,19 @@ This Project offers a `simple but clear` Android Sample project designed with `M
 
 **Activity and Fragment** take most parts of Android Developing jobs. With MVP pattern, the Acitivity will be just activity, which only does the job of "Find View", "Set Listener" and "React to the LifeCycle". The jobs of  UI Logic will be moved to IView, while the jobs of Business Logic will be moved to IPresenter. In this case, the Activity remains very simple and clear, so that it is read-friendly. And since the business logic is written in Presenter, it can be reused in other Activity easily.
 
-This Project is a sample project used in the following post in my Blog.
+### Project Structure
+This Project is a sample project used in the following post in my Blog. The package structure is as the following table. 
+
+| Package | Description | 
+| :------- | :------ | 
+| login | Simple MVP usage in Login |
+| outteradapter | MVP usage in Adapter |
+| eventbus | MVP usage with EventBus |
+| fragments | MVP usage in ViewPager |
+
 
 ## 中文
-这个项目是一个简单的Android MVP项目，用于展示MVP结构的基本写法。
+这个项目是一个简单的Android MVP项目，用于展示MVP结构的基本写法。上面的表格是这个演示项目代码的结构。
 
 ### 基本信息
 
