@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import me.kaede.mvp.MvpApplication;
 import me.kaede.mvp.R;
 import me.kaede.mvp.login.presenter.ILoginPresenter;
 import me.kaede.mvp.login.presenter.LoginPresenterCompl;
@@ -76,6 +77,13 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 			Toast.makeText(this,"Login Fail, code = " + code,Toast.LENGTH_SHORT).show();
 	}
 
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		MvpApplication.getReWatcher(this).watch(this);
+		loginPresenter.removeView();
+
+	}
 
 	@Override
 	public void onSetProgressBarVisibility(int visibility) {

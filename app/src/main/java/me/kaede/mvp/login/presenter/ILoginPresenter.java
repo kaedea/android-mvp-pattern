@@ -9,4 +9,6 @@ public interface ILoginPresenter {
 	void doLogin(String name, String passwd);
 
 	void setProgressBarVisiblity(int visiblity);
+
+	void removeView();
 }

@@ -34,15 +34,25 @@ public class LoginPresenterCompl implements ILoginPresenter {
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				iLoginView.onLoginResult(result, code);
+				if (iLoginView!=null){
+					iLoginView.onLoginResult(result, code);
+				}
 			}
-		}, 3000);
+		}, 10000);
 
 	}
+
+
 
 	@Override
 	public void setProgressBarVisiblity(int visiblity){
 		iLoginView.onSetProgressBarVisibility(visiblity);
+	}
+
+	@Override
+	public void removeView() {
+		iLoginView = null;
+
 	}
 
 	private void initUser(){
