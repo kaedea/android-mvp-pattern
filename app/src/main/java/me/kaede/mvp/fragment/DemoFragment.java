@@ -7,18 +7,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.Toast;
 import de.greenrobot.event.EventBus;
 import me.kaede.mvp.R;
 import me.kaede.mvp.fragment.adapter.MyAdapter;
 import me.kaede.mvp.fragment.event.FragmentGetDatasEvent;
-import me.kaede.mvp.fragment.event.FragmentToastEvent;
 import me.kaede.mvp.fragment.presenter.FragmentPresenterCompl;
 import me.kaede.mvp.fragment.presenter.IFragmentPresenter;
 import me.kaede.mvp.fragment.view.IFragmentView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class DemoFragment extends Fragment implements IFragmentView{

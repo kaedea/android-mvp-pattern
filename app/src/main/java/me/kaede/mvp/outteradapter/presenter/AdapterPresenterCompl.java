@@ -1,10 +1,8 @@
 package me.kaede.mvp.outteradapter.presenter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import me.kaede.mvp.R;
 import me.kaede.mvp.outteradapter.view.IAdapterView;
 
 import java.util.ArrayList;

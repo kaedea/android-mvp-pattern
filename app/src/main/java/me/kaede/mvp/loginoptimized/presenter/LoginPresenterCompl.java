@@ -1,10 +1,10 @@
-package me.kaede.mvp.login.presenter;
+package me.kaede.mvp.loginoptimized.presenter;
 
 import android.os.Handler;
 import android.os.Looper;
-import me.kaede.mvp.login.model.IUser;
-import me.kaede.mvp.login.model.UserModel;
-import me.kaede.mvp.login.view.ILoginView;
+import me.kaede.mvp.loginoptimized.model.IUser;
+import me.kaede.mvp.loginoptimized.model.UserModel;
+import me.kaede.mvp.loginoptimized.view.ILoginView;
 
 /**
  * Created by kaede on 2015/5/18.
@@ -34,7 +34,9 @@ public class LoginPresenterCompl implements ILoginPresenter {
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
+				if (iLoginView!=null) {
 					iLoginView.onLoginResult(result, code);
+				}
 			}
 		}, 5000);
 
@@ -45,6 +47,11 @@ public class LoginPresenterCompl implements ILoginPresenter {
 	@Override
 	public void setProgressBarVisiblity(int visiblity){
 		iLoginView.onSetProgressBarVisibility(visiblity);
+	}
+
+	@Override
+	public void onDestroy() {
+		iLoginView = null;
 	}
 
 

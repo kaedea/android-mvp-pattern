@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import me.kaede.mvp.R;
 import me.kaede.mvp.fragment.presenter.IFragmentPresenter;
-import me.kaede.mvp.fragment.view.IFragmentView;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package me.kaede.mvp.login;
+package me.kaede.mvp.loginoptimized;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,12 +8,12 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import me.kaede.mvp.R;
-import me.kaede.mvp.login.presenter.ILoginPresenter;
-import me.kaede.mvp.login.presenter.LoginPresenterCompl;
-import me.kaede.mvp.login.view.ILoginView;
+import me.kaede.mvp.loginoptimized.presenter.ILoginPresenter;
+import me.kaede.mvp.loginoptimized.presenter.LoginPresenterCompl;
+import me.kaede.mvp.loginoptimized.view.ILoginView;
 
 
-public class LoginActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
+public class LoginOptimizedActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
 
 	private EditText editUser;
 	private EditText editPass;
@@ -79,6 +79,7 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		loginPresenter.onDestroy();
 	}
 
 	@Override
