@@ -1,5 +1,4 @@
-##Android MVP Pattern
-[中文版](/doc/readme-cn.md)
+## Android MVP Pattern [中文版](/doc/readme-cn.md)
 
 This Project offers a `simple but clear` Android showcase project designed with `MVP Pattern (or MVP Framework)`, which comes to become a more and more important `design pattern` in Android application project. Besides, `MVP` used project is easy to changed into `MVVM`, the future of Android Project.
 
