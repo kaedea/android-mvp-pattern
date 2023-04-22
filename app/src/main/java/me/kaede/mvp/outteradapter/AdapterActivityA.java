@@ -2,7 +2,7 @@ package me.kaede.mvp.outteradapter;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +18,7 @@ import me.kaede.mvp.outteradapter.view.IAdapterView;
 
 import java.util.List;
 
-public class AdapterActivityA extends ActionBarActivity implements IAdapterView, AdapterView.OnItemClickListener {
+public class AdapterActivityA extends AppCompatActivity implements IAdapterView, AdapterView.OnItemClickListener {
 
 	private ListView listView;
 	private View footerViewVisible;

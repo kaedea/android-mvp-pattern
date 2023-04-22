@@ -2,11 +2,13 @@ package me.kaede.mvp.eventbus;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import de.greenrobot.event.EventBus;
 import me.kaede.mvp.R;
 import me.kaede.mvp.eventbus.event.GetDatasEvent;
@@ -18,7 +20,7 @@ import me.kaede.mvp.eventbus.view.IEventBusView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventBusActivity extends ActionBarActivity implements AdapterView.OnItemClickListener,IEventBusView {
+public class EventBusActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,IEventBusView {
 
 	private IEventBusPresenter iEventBusPresenter;
 	List<String> datas = new ArrayList<>();
