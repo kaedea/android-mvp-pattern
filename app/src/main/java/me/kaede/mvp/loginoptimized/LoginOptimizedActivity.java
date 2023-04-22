@@ -1,7 +1,7 @@
 package me.kaede.mvp.loginoptimized;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +13,7 @@ import me.kaede.mvp.loginoptimized.presenter.LoginPresenterCompl;
 import me.kaede.mvp.loginoptimized.view.ILoginView;
 
 
-public class LoginOptimizedActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
+public class LoginOptimizedActivity extends AppCompatActivity implements ILoginView, View.OnClickListener {
 
 	private EditText editUser;
 	private EditText editPass;

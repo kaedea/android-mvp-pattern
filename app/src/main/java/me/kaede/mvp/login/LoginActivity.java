@@ -1,19 +1,19 @@
 package me.kaede.mvp.login;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 import me.kaede.mvp.R;
 import me.kaede.mvp.login.presenter.ILoginPresenter;
 import me.kaede.mvp.login.presenter.LoginPresenterCompl;
 import me.kaede.mvp.login.view.ILoginView;
 
 
-public class LoginActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements ILoginView, View.OnClickListener {
 
 	private EditText editUser;
 	private EditText editPass;
